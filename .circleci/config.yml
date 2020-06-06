@@ -10,9 +10,13 @@ jobs:
           fingerprints:
             - $fingerprint
       - run:
-          name: Deploy Over SSH
+          name: Copy File to Server
           command: |
             scp -r ~/cicd-trial/index.html ubuntu@13.229.132.103:/var/www/html
+      - run:
+          name: Restart Server
+          command: |
+            ssh ubuntu@13.229.132.103 "sudo service apache2 restart && sudo service apache2 status"
             
 workflows:
   version: 2
