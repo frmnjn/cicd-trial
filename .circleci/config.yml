@@ -1,17 +1,18 @@
 version: 2
 jobs:
   deploy:
-    working_directory: ~/repo
+    working_directory: ~/cicd-trial
     machine:
       enabled: true
     steps:
+      - checkout
       - add_ssh_keys:
           fingerprints:
             - $fingerprint
       - run:
           name: Deploy Over SSH
           command: |
-            sudo scp -r ~/repo ubuntu@13.229.132.103:/var/www/html/demo
+            sudo scp -r ~/cicd-trial ubuntu@13.229.132.103:/var/www/html/demo
 
 workflows:
   version: 2
