@@ -13,3 +13,12 @@ jobs:
           name: Deploy Over SSH
           command: |
             scp -r ~/cicd-trial/index.html ubuntu@13.229.132.103:/var/www/html
+            
+workflows:
+  version: 2
+  deploy:
+    jobs:
+      - deploy:
+          filters:
+            branches:
+              only: master # only deploy on the master branch
