@@ -1,9 +1,9 @@
 version: 2
 jobs:
   deploy:
-    working_directory: ~/repository
     machine:
       enabled: true
+    working_directory: ~/repository
     steps:
       - add_ssh_keys:
           fingerprints:
