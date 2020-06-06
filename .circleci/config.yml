@@ -12,7 +12,7 @@ jobs:
       - run:
           name: Deploy Over SSH
           command: |
-            sudo scp -r ~/cicd-trial ubuntu@13.229.132.103:/var/www/html/demo
+            scp -r ~/cicd-trial ubuntu@13.229.132.103:/var/www/html/demo
 
 workflows:
   version: 2
