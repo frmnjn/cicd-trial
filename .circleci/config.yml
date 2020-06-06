@@ -13,7 +13,7 @@ jobs:
           command: |
             # args1 = docker_image, args2 = docker_container_name yang mau di run di server
             # ssh $ssh_user@$ssh_host "./deploy.sh frmnjn/cquran-webserver cquran-webserver"
-            scp ~/repository/index.html ubuntu@13.229.132.103:/var/www/html/demo
+            scp -r * ubuntu@13.229.132.103:/var/www/html/demo
 
 workflows:
   version: 2
